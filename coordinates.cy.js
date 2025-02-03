@@ -74,7 +74,7 @@ describe("coordinates",()=>
             cy.get("#phone").click(50,10).type("564278899")
             cy.get("#textarea").click(50,20).type("something ")
         })
-        it.only("clicking the specific bottom of the link using coordinates",()=>
+        it("clicking the specific bottom of the link using coordinates",()=>
         {
             cy.visit("https://testautomationpractice.blogspot.com/")
             cy.get("a[href='http://testautomationpractice.blogspot.com/']").then(($link) => {
@@ -88,7 +88,7 @@ describe("coordinates",()=>
                 cy.get("a[href='http://testautomationpractice.blogspot.com/']").click(x, bottomY, { force: true });   
         });
         cy.get('a[href="https://testautomationpractice.blogspot.com/p/gui-elements-ajax-hidden.html"]').then(($link) => {
-            const rect = $link[0].getBoundingClientRect(); 
+            const rect = $link[0].getBoundingClientRect();  
     
             const x = rect.left + rect.width / 2;  
             const bottomY = rect.top + rect.height;  
@@ -96,11 +96,9 @@ describe("coordinates",()=>
             cy.log(`Clicking at bottom: x = ${x}, y = ${bottomY}`);
             
             cy.get("a[href='https://testautomationpractice.blogspot.com/p/gui-elements-ajax-hidden.html']").click(x, bottomY, { force: true });   
+        });
     });
-          });
-        
-              
-        })
+})
               
         
     
